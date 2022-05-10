@@ -1,0 +1,26 @@
+.InputField {
+    border-radius: 4px;
+    padding: 32px;
+    border: none;
+    background: hsl(235, 24%, 19%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+}
+
+.InputField::placeholder {
+    color: hsl(233, 14%, 35%);
+    font-weight: bold;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 50vmin;
+    margin: 0 auto;
+}
+
+.form-group > label {
+    color: white;
+}
