@@ -11,7 +11,8 @@ db = SQLAlchemy(app)
 if __name__ == '__main__':
     app.run()
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://upycimclusrrfs:2b0c3b2d932187bf4bd844605b447a13f6411f687468cd32897b7bc29bc905b5@ec2-3-248-121-12.eu-west-1.compute.amazonaws.com:5432/d5h3lnhuv6h4ag'
     
 
 class Todo(db.Model):
