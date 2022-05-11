@@ -5,10 +5,10 @@ import os
 
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='ui/build', static_url_path='')
 db = SQLAlchemy(app)
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
     
@@ -23,6 +23,11 @@ class Todo(db.Model):
         self.completed = completed
 
 db.create_all()
+
+@app.route('/')
+@cross_origin()
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/todos/<id>', methods=['GET'])
 @cross_origin()
