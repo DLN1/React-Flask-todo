@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import cross_origin
+from flask_cors import CORS, cross_origin
 import os
 
 
 
 app = Flask(__name__, static_folder='ui/build', static_url_path='')
+CORS(app)
 db = SQLAlchemy(app)
 if __name__ == '__main__':
     app.run()
